@@ -6,6 +6,7 @@ const RestaurantList = ({header, results}) => {
     return <View style ={styles.containerStyle}>
         <Text style ={styles.headerStyle}>{header}</Text>
         <FlatList 
+            showsHorizontalScrollIndicator = {false}
             horizontal
             data={results}
             keyExtractor = {(result) => result.id}

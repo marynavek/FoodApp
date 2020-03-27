@@ -1,25 +1,30 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native'
+import {View, Text, StyleSheet, FlatList} from 'react-native';
+import ResultsDetail from '../components/ResultsDetail';
 
 const RestaurantList = ({header, results}) => {
-    return <View>
+    return <View style ={styles.containerStyle}>
         <Text style ={styles.headerStyle}>{header}</Text>
         <FlatList 
             horizontal
             data={results}
             keyExtractor = {(result) => result.id}
             renderItem ={({item}) => {
-                return <Text>{item.name}</Text>
+                return <ResultsDetail result={item}/>
             }}
         />
-<Text>Results: {results.length}</Text>
     </View>
 }
 
 const styles = StyleSheet.create ({
     headerStyle: {
+        marginLeft: 10,
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: 5
+    },
+    containerStyle: {
+        marginBottom: 10
     }
 })
 

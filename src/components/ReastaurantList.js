@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import ResultsDetail from '../components/ResultsDetail';
+import {withNavigation} from 'react-navigation';
 
 const RestaurantList = ({header, results, navigation}) => {
     return <View style ={styles.containerStyle}>
@@ -33,4 +34,4 @@ const styles = StyleSheet.create ({
     }
 })
 
-export default RestaurantList
+export default withNavigation(RestaurantList)
